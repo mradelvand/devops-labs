@@ -3,61 +3,75 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SERIES — update count and active:true when you publish posts in that section
+// ─────────────────────────────────────────────────────────────────────────────
 const SERIES = [
   {
-    icon: '🔐',
-    title: 'Conditional Access',
-    desc: 'Incident investigations, policy misconfigurations, service account blindspots, and audit log forensics.',
-    to: '/docs/conditional-access/overview',
-    count: 4,
-    active: true,
-  },
-  {
-    icon: '🛡️',
-    title: 'Identity Protection',
-    desc: 'Risk-based CA gaps, detection edge cases, and remediation patterns that docs don\'t cover.',
-    to: '/docs/identity-protection/overview',
+    icon: '📊',
+    title: 'Monitoring',
+    desc: 'Prometheus, Grafana, and Loki from scratch — dashboards, alerts, and log ingestion on a real server.',
+    to: '/docs/monitoring/overview',
     count: 1,
     active: true,
   },
   {
-    icon: '👑',
-    title: 'Privileged Identity Management',
-    desc: 'PIM activation failures, role assignment forensics, and approval workflow edge cases.',
-    to: '/docs/privileged-identity-management/overview',
+    icon: '🐳',
+    title: 'Docker',
+    desc: 'Dockerfiles, multi-stage builds, Compose stacks, and pushing images to Docker Hub.',
+    to: '/docs/docker/overview',
     count: 0,
     active: false,
   },
   {
-    icon: '🔑',
-    title: 'Authentication Methods',
-    desc: 'MFA registration gaps, SSPR misconfigurations, and phishing-resistant auth rollouts.',
-    to: '/docs/authentication-methods/overview',
+    icon: '☁️',
+    title: 'AWS',
+    desc: 'VPC architecture, EC2, Lambda, and Terraform — all free-tier safe. No NAT Gateway surprises.',
+    to: '/docs/aws/overview',
+    count: 0,
+    active: false,
+  },
+  {
+    icon: '🚀',
+    title: 'GitOps & EKS',
+    desc: 'GitHub Actions pipelines that build, test, and deploy to EKS on every commit. The employer-visible project.',
+    to: '/docs/gitops/overview',
+    count: 0,
+    active: false,
+  },
+  {
+    icon: '🖥️',
+    title: 'Linux',
+    desc: 'SadServers writeups — real broken servers, fixed. What the problem was, what revealed it, what fixed it.',
+    to: '/docs/linux/overview',
     count: 0,
     active: false,
   },
 ];
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PHILOSOPHY — the four pillars of this blog
+// ─────────────────────────────────────────────────────────────────────────────
 const PHILOSOPHY = [
   {
     icon: '🔬',
-    title: 'Deeper than docs',
-    desc: 'Microsoft docs tell you what. This repo tells you why it broke and what to do next time.',
+    title: 'Hands-on first',
+    desc: 'Every post comes from a real lab. Not a tutorial rewrite — something was actually built, broken, and fixed.',
   },
   {
-    icon: '🎯',
-    title: 'Intermediate and up',
-    desc: 'Not a beginner tutorial. Every post assumes you\'ve done the hands-on foundation first.',
+    icon: '💸',
+    title: 'Free-tier safe',
+    desc: 'AWS labs avoid NAT Gateway and RDS. No surprise bills. Every cost decision is documented explicitly.',
   },
   {
     icon: '🔗',
-    title: 'Hybrid strategy',
-    desc: 'Each post links to azurecertprep for prerequisites — then goes deeper with real-world content.',
+    title: 'Cert-aligned',
+    desc: 'Each post maps to AZ-104 or AZ-400 skill areas. Learn by building, prep for exams simultaneously.',
   },
   {
     icon: '⚡',
-    title: 'Exam-aligned',
-    desc: 'Every post maps to SC-300, AZ-500, and MS-102 skill areas. Learn and prep simultaneously.',
+    title: 'What got me',
+    desc: 'Every post has a "What got me" section — the thing that broke and took time to find. That\'s the real learning.',
   },
 ];
 
@@ -67,31 +81,31 @@ export default function Home() {
     <Layout title="Home" description={siteConfig.tagline}>
       <div className="page-wrapper">
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <div className="hero-section">
-          <h1>Entra Security Labs</h1>
+          <h1>DevOps Labs</h1>
           <p>{siteConfig.tagline}</p>
           <div className="hero-stats">
             <div className="hero-stat">
-              <span className="hero-stat-num">5+</span>
+              <span className="hero-stat-num">1+</span>
               <span className="hero-stat-label">Posts</span>
             </div>
             <div className="hero-stat">
-              <span className="hero-stat-num">4</span>
-              <span className="hero-stat-label">Series</span>
+              <span className="hero-stat-num">5</span>
+              <span className="hero-stat-label">Topics</span>
             </div>
             <div className="hero-stat">
-              <span className="hero-stat-num">3</span>
+              <span className="hero-stat-num">2</span>
               <span className="hero-stat-label">Exam certs</span>
             </div>
           </div>
           <div>
-            <Link className="hero-cta" to="/docs/conditional-access/overview">
-              Start with Conditional Access →
+            <Link className="hero-cta" to="/docs/monitoring/overview">
+              Start with Monitoring →
             </Link>
             <a
               className="hero-cta-secondary"
-              href="https://github.com/mradelvand/entra-security-labs"
+              href="https://github.com/mradelvand/devops-labs"
               target="_blank"
               rel="noreferrer"
             >
@@ -100,7 +114,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Philosophy */}
+        {/* ── Philosophy ── */}
         <div className="philosophy-section">
           <div className="philosophy-grid">
             {PHILOSOPHY.map((item) => (
@@ -113,16 +127,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Series grid */}
+        {/* ── Series grid ── */}
         <div style={{ padding: '0 2rem 2rem', maxWidth: 1100, margin: '0 auto' }}>
           <div className="section-label">Content</div>
           <div className="section-title">Lab Series</div>
           <div className="section-sub">
-            Each series goes deeper than certification prep. Start with a foundation from{' '}
+            Each series links to{' '}
             <a href="https://azurecertprep.github.io" target="_blank" rel="noreferrer" style={{ color: '#378ADD' }}>
               azurecertprep
             </a>
-            , then come back here.
+            {' '}for the cert foundation — then goes deeper with real hands-on content.
           </div>
         </div>
 
