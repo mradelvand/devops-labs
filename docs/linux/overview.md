@@ -6,7 +6,7 @@ description: "Broken servers, fixed — SadServers writeups and real Linux troub
 
 # Linux
 
-**Series:** Linux troubleshooting
+**Series:** Linux Troubleshooting
 **Exam alignment:** AZ-104 · AZ-400
 
 ---
@@ -24,4 +24,4 @@ These posts are the writeups.
 
 | # | Scenario | Skills |
 |---|----------|--------|
-| 01 | *(coming soon)* | ps, kill, process management |
+| 01 | [Hunting the Ghost Process](./2026-06-09-killing-ghost-process) | lsof, fuser, kill, truncate, process management |
