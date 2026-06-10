@@ -1,16 +1,22 @@
-// @ts-check
-const { themes } = require('prism-react-renderer');
+// docusaurus.config.js
+// Copy this file into your devops-labs/ folder, replacing the existing one
+
+import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Entra Security Labs',
-  tagline: 'Real-world identity security. Deeper than docs, deeper than exam prep.',
+  title: 'DevOps Labs',
+  tagline: 'Real-world DevOps. Built, broken, and fixed.',
   favicon: 'img/favicon.ico',
+
   url: 'https://mradelvand.github.io',
-  baseUrl: '/entra-security-labs/',
+  baseUrl: '/devops-labs/',
+
   organizationName: 'mradelvand',
-  projectName: 'entra-security-labs',
+  projectName: 'devops-labs',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
+
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
@@ -25,12 +31,12 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/mradelvand/entra-security-labs/edit/main/',
+          sidebarPath: './sidebars.js',
+          editUrl: 'https://github.com/mradelvand/devops-labs/tree/main/',
         },
-        blog: false,
+        blog: false,   // no blog section — everything goes in /docs
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -39,41 +45,20 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/social-card.png',
-      colorMode: {
-        defaultMode: 'dark',
-        disableSwitch: false,
-        respectPrefersColorScheme: true,
-      },
       navbar: {
-        title: 'Entra Security Labs',
+        title: 'DevOps Labs',
         logo: {
-          alt: 'Entra Security Labs',
+          alt: 'DevOps Labs Logo',
           src: 'img/logo.svg',
         },
         items: [
+          { to: '/docs/monitoring/overview', label: 'Monitoring', position: 'left' },
+          { to: '/docs/docker/overview',     label: 'Docker',     position: 'left' },
+          { to: '/docs/aws/overview',        label: 'AWS',        position: 'left' },
+          { to: '/docs/gitops/overview',     label: 'GitOps',     position: 'left' },
+          { to: '/docs/linux/overview',      label: 'Linux',      position: 'left' },
           {
-            to: '/docs/conditional-access/overview',
-            label: 'Conditional Access',
-            position: 'left',
-          },
-          {
-            to: '/docs/identity-protection/overview',
-            label: 'Identity Protection',
-            position: 'left',
-          },
-          {
-            to: '/docs/privileged-identity-management/overview',
-            label: 'PIM',
-            position: 'left',
-          },
-          {
-            to: '/docs/authentication-methods/overview',
-            label: 'Auth Methods',
-            position: 'left',
-          },
-          {
-            href: 'https://github.com/mradelvand/entra-security-labs',
+            href: 'https://github.com/mradelvand/devops-labs',
             label: 'GitHub',
             position: 'right',
           },
@@ -81,41 +66,14 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Series',
-            items: [
-              { label: 'Conditional Access', to: '/docs/conditional-access/overview' },
-              { label: 'Identity Protection', to: '/docs/identity-protection/overview' },
-              { label: 'PIM', to: '/docs/privileged-identity-management/overview' },
-              { label: 'Authentication Methods', to: '/docs/authentication-methods/overview' },
-            ],
-          },
-          {
-            title: 'Prerequisites',
-            items: [
-              { label: 'azurecertprep.github.io', href: 'https://azurecertprep.github.io' },
-              { label: 'SC-500 Challenges', href: 'https://azurecertprep.github.io/docs/sc-500/overview' },
-              { label: 'AZ-104 Challenges', href: 'https://azurecertprep.github.io/docs/az-104/overview' },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              { label: 'GitHub', href: 'https://github.com/mradelvand/entra-security-labs' },
-              { label: 'Report an Issue', href: 'https://github.com/mradelvand/entra-security-labs/issues' },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} Entra Security Labs. Not affiliated with Microsoft.`,
+        copyright: `Built by mradelvand · ${new Date().getFullYear()}`,
       },
       prism: {
-        theme: themes.github,
-        darkTheme: themes.dracula,
-        additionalLanguages: ['powershell', 'bash', 'json'],
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
+        additionalLanguages: ['bash', 'yaml', 'hcl', 'docker', 'python'],
       },
-      algolia: undefined,
     }),
 };
 
-module.exports = config;
+export default config;
