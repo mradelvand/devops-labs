@@ -25,4 +25,4 @@ These posts are the writeups.
 | # | Scenario | Skills |
 |---|----------|--------|
 | 01 | [Hunting the Ghost Process](./2026-06-09-killing-ghost-process) | lsof, fuser, kill, process management |
-| 02 | [Hunting the Ghost Process](./2026-06-11-log-analysis) | awk, cut, log-analysis |
+| 02 | [Counting IPs in an Access Log](./2026-06-11-log-analysis) | awk, cut, log-analysis |
