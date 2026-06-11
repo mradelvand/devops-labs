@@ -87,3 +87,5 @@ Fully free tier — no charges.
 ---
 
 *Part of the [Linux Troubleshooting](https://github.com/mradelvand/devops-labs) series.*
+
+Credit to SadServers for this fun and educational scenario! They turn sysadmin headaches into learning opportunities.
