@@ -17,6 +17,7 @@ tags: [linux, troubleshooting, sysadmin, debian]
 ## The goal
 
 Someone left a test program running in the background. It was writing to `/var/log/bad.log` non-stop. The file was growing by the second, and storage alerts were going off. The job: find what's writing to that file, stop it, and reclaim the disk — without making the situation worse.
+I tried **ps aux --sort=-%cpu | head -10** to find the culprit, but that only shows CPU-hungry processes.
 
 ---
 
@@ -56,17 +57,8 @@ sudo kill -9 <PID>
 
 `-9` sends SIGKILL — the process can't ignore it.
 
-### 3. Truncate the log file
 
-The process is dead, but the file is still bloated. Still don't `rm` it — other tools may expect it to exist. Instead, empty it in place:
-
-```bash
-sudo truncate -s 0 /var/log/bad.log
-```
-
-This instantly zeros the file size without removing the file.
-
-### 4. Verify
+### 3. Verify
 
 Make sure nothing new is writing to it:
 
