@@ -22,6 +22,6 @@ and everything Terraform-managed so it can be destroyed and recreated without co
 
 | # | Title | Topics |
 |---|-------|--------|
-| 01 | *(coming soon)* | VPC, subnets, internet gateway, EC2 |
+| 01 | [AWS New Account Security Checklist](./2024-06-11-aws-new-account-security-checklist) |aws, security, iam, cloud |
 | 02 | *(coming soon)* | Terraform VPC — destroy and recreate |
 | 03 | *(coming soon)* | EC2 logs + Lambda |
