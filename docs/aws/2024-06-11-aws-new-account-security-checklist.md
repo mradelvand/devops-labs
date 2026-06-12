@@ -1,9 +1,9 @@
 ---
+sidebar_position: 1
 title: "AWS New Account Security Checklist"
 description: "The first things I do when spinning up a fresh AWS account — what matters, what order, and what I almost always forget."
 slug: aws-new-account-security-checklist
 tags: [aws, security, iam, cloud]
-
 ---
 
 You spin up a new AWS account. Root credentials are right there. It feels fine. It is not fine.
