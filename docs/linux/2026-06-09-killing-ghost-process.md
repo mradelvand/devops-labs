@@ -2,6 +2,7 @@
 sidebar_position: 1
 title: "Hunting the Ghost Process: How to Stop a Runaway Log File"
 description: "A forgotten background process is hammering your disk — here's how to find it, kill it, and reclaim the space without making things worse."
+authors: [mradelvand]
 tags: [linux, troubleshooting, sysadmin, debian]
 ---
 
